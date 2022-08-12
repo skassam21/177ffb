@@ -5,9 +5,6 @@ import watch from "../watchfile";
 console.log("Another change here");
 
 
-
-
-
 app.listen(PORT, () => {
   console.log(`Listening: http://localhost:${PORT}`);
 });
