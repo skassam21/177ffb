@@ -4,11 +4,11 @@ const simpleGit = require("simple-git");
 const watch = () => {
   const git = simpleGit();
 
-  fs.watch("./src", (eventType: string, fileName: string) => {
+  fs.watch("./src", async (eventType: string, fileName: string) => {
     console.log(`File Changed, ${eventType}, ${fileName}`);
-    git.add(`src/${fileName}`);
-    git.commit(`[hatchways-commit] - ${eventType} src/${fileName}`);
-    git.push();
+    await git.add(`src/${fileName}`);
+    await git.commit(`[hatchways-commit ${(new Date()).toDateString()}] - ${eventType} src/${fileName}`);
+    await git.push("origin");
   });
 };
 
