@@ -10,6 +10,8 @@ app.get("/", (req, res, next) => {
 
 // Place your routes & routers here.
 
+console.log("Adding a file change here");
+
 app.use(notFound);
 app.use(errorHandler);
 export default app;
